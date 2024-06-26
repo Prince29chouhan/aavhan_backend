@@ -12,7 +12,13 @@ import submissionRoute from "./route/submission.js"
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: "https://peaceful-sfogliatella-cbab5f.netlify.app/",
+        credentials: true,
+        methods: ["GET", "POST"]
+    }
+));
 app.use(express.json());
 
 

@@ -39,14 +39,14 @@ app.use("/task", taskRoute);
 app.use("/user", userRoute);
 app.use("/submission", submissionRoute);
 
-if(process.env.NODE_ENV === "production"){
-    const dirPath = path.resolve();
-    app.use(express.static("Frontend/dist"));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(dirPath, "Frontend", "dist", "index.html"));
-        });
+// if(process.env.NODE_ENV === "production"){
+//     const dirPath = path.resolve();
+//     app.use(express.static("Frontend/dist"));
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.resolve(dirPath, "Frontend", "dist", "index.html"));
+//         });
         
-}
+// }
 
 
 app.listen(PORT, () => {
